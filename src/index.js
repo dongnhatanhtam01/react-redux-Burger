@@ -6,10 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 
 //set up redux
 import { Provider } from "react-redux";
-import {createStore} from "redux";
-import {rootReducer} from "./redux/rootReducer";
+import { createStore } from "redux";
+import { rootReducer } from "./redux/rootReducer";
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 setInterval(() => {
   ReactDOM.render(
